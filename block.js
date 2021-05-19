@@ -20,7 +20,7 @@ export class Block {
 
     computeHash() {
         let hash = this.getHash()
-        while (!hash.startsWith('00000')) {
+        while (!hash.startsWith('0000')) {
             this.proof++
             hash = this.getHash()
         }
