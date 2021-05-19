@@ -6,12 +6,12 @@ export class Block {
         this.data = data
         this.timestamp = new Date()
         this.previousHash = previousHash
-        this.proof = 0
+        this.nonce = 0
         this.hash = this.computeHash()
     }
 
     getKey() {
-        return this.index + this.timestamp + this.previousHash + this.proof + this.data
+        return this.index + this.timestamp + this.previousHash + this.nonce + this.data
     }
 
     getHash() {
@@ -21,7 +21,7 @@ export class Block {
     computeHash() {
         let hash = this.getHash()
         while (!hash.startsWith('0000')) {
-            this.proof++
+            this.nonce++
             hash = this.getHash()
         }
         return hash
