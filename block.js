@@ -3,7 +3,7 @@ import SHA256 from 'crypto-js/sha256.js'
 export class Block {
     constructor(index, data, previousHash = "") {
         this.index = index
-        this.data = data
+        this.data = JSON.stringify(data)
         this.timestamp = new Date()
         this.previousHash = previousHash
         this.nonce = 0
