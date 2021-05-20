@@ -1,7 +1,7 @@
 import { Blockchain } from './blockchain.js'
 
-const vladCoin = new Blockchain()
-vladCoin.addBlock('one')
+const vladCoin = new Blockchain() // Genesis
+vladCoin.addBlock('one') // Each new block must be mined
 vladCoin.addBlock('two')
 vladCoin.addBlock('three')
 vladCoin.addBlock('four')
